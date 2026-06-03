@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: personal-blog-django
+    env: python
+    plan: free
+    buildCommand: ./build.sh
+    startCommand: gunicorn blog_project.wsgi:application --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.14.5
+      - key: DEBUG
+        value: 'False'
+      - key: SECRET_KEY
+        generateValue: true
