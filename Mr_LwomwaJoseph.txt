@@ -1,0 +1,6 @@
+Please sir, after running the server, you can create an account to test the functionality of the system or use the following superuser credentials
+
+username:lwomwajoseph
+password:lwomwa123
+
+Thankyou.

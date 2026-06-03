@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content-container">
+  {% for post in object_list %}
+  <div class="post-entry">
+    <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+    <p>{{ post.body|truncatewords:50 }}</p>
+    <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary" style="margin-top: 1rem;">Read More</a>
+  </div>
+  {% empty %}
+  <div class="post-entry">
+    <p>No posts yet. <a href="{% url 'post_new' %}">Create one!</a></p>
+  </div>
+  {% endfor %}
+</div>
+{% endblock content %}
