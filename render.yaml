@@ -3,7 +3,7 @@ services:
     name: personal-blog-django
     env: python
     plan: free
-    buildCommand: ./build.sh
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --no-input --clear && python manage.py migrate --noinput
     startCommand: gunicorn blog_project.wsgi:application --bind 0.0.0.0:$PORT
     envVars:
       - key: PYTHON_VERSION
